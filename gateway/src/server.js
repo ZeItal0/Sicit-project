@@ -1,7 +1,11 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { createProxyMiddleware } from "http-proxy-middleware";
+
+import {
+  createCircuitBreakerProxy,
+  getCircuitBreakersStatus
+} from "./middlewares/circuitBreakerProxy.js";
 
 dotenv.config();
 
@@ -57,39 +61,64 @@ app.get("/health", async (req, res) => {
   res.json({
     status: allUp ? "ok" : "degraded",
     services: results,
+    circuits: getCircuitBreakersStatus(),
     timestamp: new Date()
   });
 });
 
-function createServiceProxy(serviceName, target, extraOptions = {}) {
-  return createProxyMiddleware({
-    target,
-    changeOrigin: true,
-    timeout: 5000,
-    proxyTimeout: 5000,
-    ...extraOptions,
-    on: {
-      error(err, req, res) {
-        if (!res.headersSent) {
-          res.status(503).json({
-            message: `${serviceName} indisponível no momento`
-          });
-        }
-      }
-    }
+app.get("/", (req, res) => {
+  res.send("API Gateway do SICIT rodando");
+});
+
+app.get("/circuits", (req, res) => {
+  res.json({
+    circuits: getCircuitBreakersStatus(),
+    timestamp: new Date()
   });
-}
+});
 
-app.get("/", (req, res) => { res.send("API Gateway do SICIT rodando"); });
+app.use(
+  "/auth",
+  createCircuitBreakerProxy("auth-service", process.env.AUTH_SERVICE_URL, {
+    pathRewrite: { "^/auth": "" }
+  })
+);
 
-app.use("/auth", createServiceProxy("auth-service", process.env.AUTH_SERVICE_URL, { pathRewrite: { "^/auth": "" } }));
+app.use(
+  "/users",
+  createCircuitBreakerProxy("user-service", process.env.USER_SERVICE_URL)
+);
 
-app.use("/users", createServiceProxy("user-service", process.env.USER_SERVICE_URL));
-app.use("/communication", createServiceProxy("communication-service", process.env.COMMUNICATION_SERVICE_URL));
-app.use("/stream", createServiceProxy("stream-service", process.env.STREAM_SERVICE_URL));
-app.use("/training", createServiceProxy("training-service", process.env.TRAINING_SERVICE_URL));
-app.use("/audit", createServiceProxy("audit-service", process.env.AUDIT_SERVICE_URL));
-app.use("/analytics", createServiceProxy("analytics-service", process.env.ANALYTICS_SERVICE_URL));
+app.use(
+  "/communication",
+  createCircuitBreakerProxy(
+    "communication-service",
+    process.env.COMMUNICATION_SERVICE_URL
+  )
+);
+
+app.use(
+  "/stream",
+  createCircuitBreakerProxy("stream-service", process.env.STREAM_SERVICE_URL)
+);
+
+app.use(
+  "/training",
+  createCircuitBreakerProxy("training-service", process.env.TRAINING_SERVICE_URL)
+);
+
+app.use(
+  "/audit",
+  createCircuitBreakerProxy("audit-service", process.env.AUDIT_SERVICE_URL)
+);
+
+app.use(
+  "/analytics",
+  createCircuitBreakerProxy(
+    "analytics-service",
+    process.env.ANALYTICS_SERVICE_URL
+  )
+);
 
 const PORT = process.env.PORT || 3000;
 
