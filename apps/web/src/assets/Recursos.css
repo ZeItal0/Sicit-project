@@ -1,0 +1,93 @@
+.recursos {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.recursos-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #32373D;
+  margin-bottom: 0.5rem;
+}
+
+.recurso-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 2rem; 
+  padding: 2.5rem 10rem;
+}
+
+.recurso-item.destaque {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.recurso-item.reverse {
+  width: 200%;
+  
+}
+.recurso-item.reverse > div {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.recurso-item h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #32373d;
+  margin: 0;
+}
+
+.recurso-item p {
+  color: #32373d;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 900px;
+  font-weight: 600;
+}
+
+.logo-down {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.recurso-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+@media (max-width: 900px) {
+  .recurso-item,
+  .recurso-item.reverse,
+  .recurso-item.destaque {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .recurso-item.reverse {
+    flex-direction: column;
+  }
+
+  .recurso-item > div {
+    max-width: 100%;
+  }
+
+  .logo-down {
+    width: 72px;
+    height: 72px;
+  }
+}

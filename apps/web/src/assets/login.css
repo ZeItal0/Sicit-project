@@ -1,0 +1,117 @@
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(103, 111, 121, 0.35);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.login-modal {
+    position: relative;
+    width: 450px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+}
+
+.login-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #32373d;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.login-logo {
+    width: 95px;
+    margin-top: 0.2rem;
+    z-index: 1;
+}
+
+.login-system-name {
+    z-index: 1;
+    margin: 0.6rem 0 1.4rem;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #32373d;
+    white-space: nowrap;
+}
+
+.login-title {
+    z-index: 1;
+    margin: 0 0 0.8rem;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #32373d;
+}
+
+.google-button {
+    z-index: 1;
+    width: 390px;
+    height: 70px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.google-button:hover {
+    transform: translateY(-2px);
+}
+
+.google-button > div {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.google-button iframe {
+    transform: scale(1.35);
+}
+
+.logo-lock {
+    width: 13px;
+}
+
+.login-footer {
+    z-index: 1;
+    margin-top: auto;
+    color: rgba(50, 55, 61, 0.55);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.login-footer p {
+    display: flex;
+    gap: 0.4rem;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+}
+
+.login-footer strong {
+    font-size: 0.75rem;
+    color: rgba(50, 55, 61, 0.75);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}

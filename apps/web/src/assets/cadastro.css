@@ -1,0 +1,122 @@
+.cadastro-overlay {
+    position: fixed;
+    inset: 0;
+     background: rgba(103, 111, 121, 0.35);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4000;
+}
+
+.cadastro-modal-wrapper {
+    width: 100%;
+    max-width: 610px;
+}
+
+.cadastro-modal {
+    position: relative;
+    min-height: 500px;
+    padding: 1.1rem 1.4rem 1.4rem;
+    color: #32373d;
+}
+
+.cadastro-close {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    background: transparent;
+    border: none;
+    font-size: 2.3rem;
+    line-height: 1;
+    color: #32373d;
+    cursor: pointer;
+}
+
+.cadastro-logo {
+    width: 72px;
+    margin-bottom: 0.4rem;
+}
+
+.cadastro-title {
+    position: absolute;
+    top: 2rem;
+    left: 6.4rem;
+    margin: 0;
+    font-size: 1.55rem;
+    font-weight: 900;
+    color: #32373d;
+    white-space: nowrap;
+}
+
+.cadastro-subtitle {
+    max-width: 380px;
+    margin: 0.4rem 0 0.8rem 0.2rem;
+    text-align: left;
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #32373d;
+}
+
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.cadastro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem 1rem;
+}
+
+.cadastro-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro-field label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #32373d;
+    margin-bottom: 0.25rem;
+}
+
+.cadastro-field input {
+    width: 100%;
+    height: 31px;
+    border-radius: 0.6rem;
+    border: 1.4px solid rgba(50, 55, 61, 0.75);
+    background: rgba(255, 255, 255, 0.08);
+    outline: none;
+    padding: 0 0.7rem;
+    font-size: 0.72rem;
+    color: #32373d;
+    box-sizing: border-box;
+}
+
+.cadastro-field-full {
+    width: calc(50% - 0.5rem);
+}
+
+.cadastro-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3.1rem;
+}
+
+.cadastro-submit {
+    background: #dbe8f5;
+    color: #32373d;
+    border: none;
+    border-radius: 0.55rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.cadastro-submit:hover {
+    background: #c8d9ec;
+}

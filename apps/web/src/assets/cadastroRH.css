@@ -1,0 +1,219 @@
+.cadastro-rh-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(103, 111, 121, 0.35);
+  backdrop-filter: blur(2px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 4500;
+}
+
+.cadastro-rh-wrapper {
+  width: 100%;
+  max-width: 840px;
+}
+
+.cadastro-rh-modal {
+  position: relative;
+
+  min-height: 400px;
+
+  padding: 24px 18px;
+  box-sizing: border-box;
+
+  color: #32373d;
+
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+}
+
+.cadastro-rh-modal::after {
+  content: "";
+
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: calc(100% - 340px);
+
+  width: 1.5px;
+
+  background: rgba(50, 55, 61, 0.35);
+}
+
+.cadastro-rh-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+
+  border: 0;
+  background: transparent;
+
+  color: #32373d;
+  font-size: 42px;
+  line-height: 1;
+
+  cursor: pointer;
+  z-index: 4;
+}
+
+.cadastro-rh-left,
+.cadastro-rh-right {
+  position: relative;
+  z-index: 2;
+}
+
+.cadastro-rh-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 28px;
+}
+
+.cadastro-rh-user img {
+  width: 72px;
+  height: auto;
+}
+
+.cadastro-rh-user h2,
+.cadastro-rh-right h2 {
+  margin: 0;
+
+  color: #32373d;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.cadastro-rh-subtitle,
+.cadastro-rh-right p {
+  margin: 0 0 26px;
+
+  color: #32373d;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.cadastro-rh-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+}
+
+.cadastro-rh-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.cadastro-rh-field label {
+  margin-bottom: 5px;
+
+  color: #32373d;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.cadastro-rh-field input,
+.cadastro-rh-field select {
+  width: 100%;
+  height: 31px;
+
+  border-radius: 8px;
+  border: 1.5px solid rgba(50, 55, 61, 0.8);
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #32373d;
+
+  outline: none;
+
+  padding: 0 10px;
+  box-sizing: border-box;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.cadastro-rh-full {
+  margin-bottom: 10px;
+}
+
+.cadastro-rh-save {
+  width: 100%;
+  height: 42px;
+
+  margin-top: 48px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: #c7d4e1;
+  color: #32373d;
+
+  font-size: 15px;
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+.cadastro-rh-right {
+  padding-left: 8px;
+  padding-top: 14px;
+}
+
+.cadastro-rh-right h2 {
+  margin-bottom: 28px;
+}
+
+.cadastro-rh-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 8px;
+
+  color: #32373d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cadastro-rh-check input {
+  accent-color: #32373d;
+}
+
+.cadastro-rh-right .cadastro-rh-field {
+  margin-top: 18px;
+}
+
+.cadastro-rh-field select {
+  height: 36px;
+  cursor: pointer;
+  background-color: #c7d4e1;
+}
+
+.cadastro-rh-sync {
+  width: 100%;
+  height: 41px;
+
+  margin-top: 14px;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: #c7d4e1;
+  color: #32373d;
+
+  font-size: 15px;
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+.cadastro-rh-save:hover,
+.cadastro-rh-sync:hover {
+  background: #bacee5;
+}

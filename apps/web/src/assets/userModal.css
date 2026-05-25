@@ -1,0 +1,106 @@
+.user-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(103, 111, 121, 0.35);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 55px;
+    padding-right: 18px;
+    z-index: 4000;
+}
+
+.user-modal-wrapper {
+    width: 330px;
+}
+
+.icon-gear {
+    width: 30px;
+}
+
+.icon-logout {
+    width: 20px;
+}
+
+.user-config-button:hover {
+    color: #bacee5;
+}
+
+.user-modal {
+    min-height: 240px;
+    padding: 1rem 1.3rem;
+    color: #32373d;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.4rem;
+}
+
+.user-avatar img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.user-modal h2 {
+    margin: 0.4rem 0 0.6rem;
+    color: #32373D;
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+.user-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(50, 55, 61, 0.55);
+    margin: 0.4rem 0 1rem;
+}
+
+.user-config-button {
+    width: 100%;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: #32373d;
+    font-size: 0.7rem;
+    cursor: pointer;
+    padding: 0.5rem 0.2rem 0.8rem;
+}
+
+.user-config-button span {
+    font-size: 1.2rem;
+}
+
+.user-logout-button {
+    width: 85px;
+    border: none;
+    border-radius: 10px;
+    background: #bacee5;
+    color: #32373d;
+    padding: 0.55rem 0.7rem;
+    font-weight: 900;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+}
+
+.user-logout-button:hover {
+    background: #c8d9ec;
+}
