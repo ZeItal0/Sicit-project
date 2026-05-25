@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.login-screen {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(90deg,
+      #5f7896 0%,
+      #5f7896 48.7%,
+      #bfd2e5 48.7%,
+      #bfd2e5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-wrapper {
+  position: relative;
+  width: 420px;
+  height: 445px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-wrapper {
+  transform: translateX(-10px);
+}
+
+.login-card {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 42px 20px;
+}
+
+.login-logo {
+  width: 20vh;
+  height: auto;
+  position: absolute;
+  top: -93px;
+  left: 47%;
+  transform: translateX(-50%);
+}
+
+.login-card h1 {
+  font-size: 34px;
+  line-height: 1.18;
+  text-align: center;
+  color: #30353b;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  width: 100%;
+  font-size: 13px;
+  color: #30353b;
+  font-weight: 800;
+  margin: 6px 0 7px 12px;
+  letter-spacing: 0.3px;
+  text-align: left;
+}
+
+.login-form input {
+  width: 100%;
+  height: 43px;
+  border-radius: 13px;
+  border: 1.7px solid #333840;
+  background: rgba(255, 255, 255, 0.13);
+  outline: none;
+  padding: 0 14px;
+  font-size: 16px;
+  color: #30353b;
+}
+
+.login-button {
+  width: 82%;
+  height: 55px;
+  align-self: center;
+  margin-top: 48px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(191, 210, 229, 0.78);
+  color: #30353b;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.login-button:hover {
+  background: rgba(191, 210, 229, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(47, 51, 57, 0.18);
+}
+
+.window-actions {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 34px;
+
+  z-index: 20;
+
+  -webkit-app-region: no-drag;
+}
+
+.window-actions button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition:
+    transform .22s ease,
+    background .22s ease;
+
+  -webkit-app-region: no-drag;
+}
+
+.window-actions button:hover img {
+  transform: scale(1.9);
+}
+
+.minimize {
+  width: 44px;
+  height: auto;
+  object-fit: contain;
+  transform: translateY(3px);
+  transition: .2s;
+}
+
+.closed {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  transition: .2s;
+}
+
+.drag-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  -webkit-app-region: drag;
+  z-index: 10;
+}

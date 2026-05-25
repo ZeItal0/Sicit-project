@@ -1,0 +1,27 @@
+.glass-small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 12px;
+  width: fit-content;
+  height: fit-content;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+
+  color: #32373d;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.glass-small:hover {
+  transform: translateY(-2px);
+}

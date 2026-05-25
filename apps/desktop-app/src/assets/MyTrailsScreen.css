@@ -1,0 +1,204 @@
+.my-trails-page {
+    position: absolute;
+    top: 120px;
+    left: -10px;
+    right: 30px;
+    bottom: 30px;
+    z-index: 4;
+    overflow-y: auto;
+    padding-right: 12px;
+    box-sizing: border-box;
+}
+
+.my-trails-header {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.my-trails-header h1 {
+    margin: 0;
+
+    color: #32373d;
+    font-size: 29px;
+    font-weight: 900;
+}
+
+.my-trails-header p {
+    margin: 4px 0 0;
+
+    color: #32373d;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.my-trails-table-header {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr;
+
+    margin-bottom: 12px;
+    padding: 0 22px;
+
+    color: #32373d;
+    font-size: 11px;
+    font-weight: 900;
+
+    text-align: left;
+}
+
+.my-trails-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.my-trail-card {
+    height: 74px;
+
+    background: rgba(255,255,255,0.22);
+    border-radius: 12px;
+
+    padding: 0 16px;
+
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+.my-trail-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.my-trail-icon {
+    width: 54px;
+    height: 54px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 28px;
+}
+
+.my-trail-info strong {
+    display: block;
+
+    color: #32373d;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.my-trail-info p {
+    margin: 2px 0 0;
+
+    color: #32373d;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.my-trail-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.my-trail-progress strong {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.my-trail-progress-bar {
+    width: 145px;
+    height: 7px;
+
+    background: #b0b0b0;
+    border-radius: 999px;
+
+    overflow: hidden;
+}
+
+.my-trail-progress-bar div {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.my-trail-steps strong,
+.my-trail-current strong {
+    display: block;
+
+    color: #32373d;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.my-trail-steps span,
+.my-trail-current span {
+    color: #32373d;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.my-trail-certificate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.certificate-available {
+    color: #d7c900;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.certificate-locked {
+    color: #5b5b5b;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.my-trail-certificate button {
+    width: 30px;
+    height: 30px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #6f86a3;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+.my-trails-page::-webkit-scrollbar {
+    width: 6px;
+}
+
+.my-trails-page::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.my-trails-page::-webkit-scrollbar-thumb {
+    background: rgba(111, 134, 163, 0.8);
+    border-radius: 999px;
+}
+
+.my-trails-page::-webkit-scrollbar-thumb:hover {
+    background: rgba(111, 134, 163, 1);
+}
+
+.downloadicon {
+    width: 15px;
+    height: 15px;
+}
