@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "amqplib": "^1.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.2.0",
+    "pdfkit": "^0.18.0",
+    "pg": "^8.20.0"
+  },
+  "name": "training-service",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/main/server.js",
+  "scripts": {
+    "dev": "nodemon src/main/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
