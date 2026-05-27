@@ -175,4 +175,32 @@ export class MoodleServiceClient {
       "notes[0][format]": "1"
     });
   }
+
+  async getCourseCompletion({ moodleUserId, moodleCourseId }) {
+    try {
+      const result = await this.call("core_completion_get_course_completion_status", {
+        userid: String(moodleUserId),
+        courseid: String(moodleCourseId)
+      });
+
+      return {
+        completed: result?.completionstatus?.completed || false,
+        aggregation: result?.completionstatus?.aggregation || 0,
+        progress: result?.completionstatus?.completions || [],
+        source: "MOODLE"
+      };
+    } catch (error) {
+      if (error.message?.includes("No completion criteria")) {
+        return {
+          completed: false,
+          aggregation: 0,
+          progress: [],
+          source: "MOODLE",
+          warning: "Curso Moodle sem critérios de conclusão configurados"
+        };
+      }
+
+      throw error;
+    }
+  }
 }
