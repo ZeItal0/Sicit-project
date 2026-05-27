@@ -79,4 +79,36 @@ export class MongoLearningPathResultRepository {
             ...item
         }));
     }
+
+    async updateMoodleProgress({
+        pathId,
+        userId,
+        moodleProgress
+    }) {
+
+        const collection =
+            await this.collection();
+
+        await collection.updateOne(
+            {
+                pathId,
+                userId
+            },
+            {
+                $set: {
+                    moodleProgress,
+                    moodleProgressSyncedAt:
+                        new Date(),
+
+                    updatedAt:
+                        new Date()
+                }
+            }
+        );
+
+        return this.findByUserIdAndPathId(
+            userId,
+            pathId
+        );
+    }
 }
