@@ -335,7 +335,46 @@ export class GenerateLearningPathStepResultsUseCase {
         content: `Seu certificado da trilha "${path.title}" está disponível para download.`
       });
     }
+    if (
+      this.moodleServiceClient &&
+      path.moodleCourseId &&
+      path.moodleEnrolments?.length
+    ) {
 
+      const enrolment =
+        path.moodleEnrolments.find(
+          (
+            item
+          ) =>
+            item.sicitUserId ===
+            userId
+        );
+
+      if (
+        enrolment
+      ) {
+
+        const moodleProgress =
+          await this.moodleServiceClient
+            .getCourseCompletion({
+              moodleUserId:
+                enrolment.moodleUserId,
+
+              moodleCourseId:
+                path.moodleCourseId
+            });
+
+        await this.learningPathResultRepository
+          .updateMoodleProgress({
+            pathId:
+              path.id,
+
+            userId,
+
+            moodleProgress
+          });
+      }
+    }
     return savedResult;
   }
 }
