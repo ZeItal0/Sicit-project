@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-
+import { setupSwagger } from "./docs/swagger.js";
 import {
   createCircuitBreakerProxy,
   getCircuitBreakersStatus
@@ -12,6 +12,8 @@ dotenv.config();
 const app = express();
 
 app.use(cors());
+
+setupSwagger(app);
 
 app.get("/health", async (req, res) => {
   const services = {
