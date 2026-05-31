@@ -44,7 +44,7 @@
 
 .live-video-card {
     position: relative;
-    background: #6f86a3;
+    background: #A5B9D4;
     border-radius: 10px;
     padding: 16px 64px 0 16px;
     height: 440px;
@@ -132,7 +132,7 @@
 
 .live-title h2 {
     margin: 0;
-    color: #c7d4e1;
+    color: #32373D;
     font-size: 14px;
     font-weight: 900;
 }
@@ -151,7 +151,7 @@
     width: 240px;
     border: 0;
     outline: none;
-    background: #bacee5;
+    background: #CADCF2;
     border-radius: 6px;
     padding: 8px;
     color: #32373d;
@@ -169,7 +169,7 @@
 
 .live-stats-bar {
     height: 64px;
-    background: #6f86a3;
+    background: #A5B9D4;
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -182,7 +182,8 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #c7d4e1;
+    color: #32373D;
+    text-align: left;
 }
 
 .live-stat-card img,
@@ -190,7 +191,7 @@
     width: 50px;
     height: 50px;
     border-radius: 10px;
-    background: #c7d4e1;
+    background: #CADCF2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -223,7 +224,7 @@
 
 .live-chat-panel {
   position: relative;
-  background: #6f86a3;
+  background: #A5B9D4;
   border-radius: 10px;
   padding: 14px;
   height: calc(100% - 58px);
@@ -232,7 +233,7 @@
 
 .live-chat-header h2 {
   margin: 0 0 14px;
-  color: #c7d4e1;
+  color: #32373D;
   font-size: 14px;
   font-weight: 900;
   text-align: left;
@@ -247,7 +248,7 @@
 .live-chat-tabs button {
   border: 0;
   background: transparent;
-  color: #c7d4e1;
+  color: #7491B9;
   font-size: 13px;
   font-weight: 900;
   padding-bottom: 8px;
@@ -267,6 +268,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  text-align: left;
 }
 
 .live-chat-list::-webkit-scrollbar,
@@ -296,14 +298,14 @@
 
 .live-chat-message strong,
 .live-online-user strong {
-  color: #c7d4e1;
+  color: #32373D;
   font-size: 14px;
   font-weight: 900;
   margin-right: 8px;
 }
 
 .live-chat-message span {
-  color: #c7d4e1;
+  color: #32373D;
   font-size: 10px;
   font-weight: 800;
 }
@@ -311,7 +313,7 @@
 .live-chat-message p,
 .live-online-user p {
   margin: 4px 0 0;
-  color: #c7d4e1;
+  color: #32373D;
   font-size: 10px;
   font-weight: 800;
 }
@@ -323,20 +325,21 @@
 
 
 .live-empty-online {
-  color: #c7d4e1;
+  color: #32373D;
   font-size: 12px;
   font-weight: 800;
 }
 
 .live-chat-input {
   position: relative;
-  height: 46px;
+  height: 55px;
   border: 2px solid #c7d4e1;
   border-radius: 8px;
   display: flex;
   align-items: center;
   padding-left: 14px;
-  background: #6f86a3;
+  background: #A5B9D4;
+  top: 2px;
 }
 
 .live-chat-input input {
@@ -344,13 +347,13 @@
   border: 0;
   outline: none;
   background: transparent;
-  color: #c7d4e1;
+  color: #32373D;
   font-size: 11px;
   font-weight: 800;
 }
 
 .live-chat-input input::placeholder {
-  color: #c7d4e1;
+  color: #32373D;
 }
 
 .live-chat-input button {
@@ -399,12 +402,12 @@
 .live-chat-message-top strong {
   font-size: 13px;
   font-weight: 800;
-  color: #dfe8f5;
+  color: #32373D;
 }
 
 .live-chat-message-top span {
   font-size: 11px;
-  color: #dfe8f5;
+  color: #32373D;
   opacity: 0.8;
 }
 
@@ -413,7 +416,7 @@
 
   font-size: 12px;
   font-weight: 700;
-  color: #dfe8f5;
+  color: #32373D;
 
   line-height: 1.2;
 
@@ -446,7 +449,7 @@
 .live-online-user strong {
   font-size: 13px;
   font-weight: 800;
-  color: #dfe8f5;
+  color: #32373D;
 
   line-height: 1;
 }
@@ -456,7 +459,7 @@
 
   font-size: 11px;
   font-weight: 700;
-  color: #dfe8f5;
+  color: #32373D;
 
   opacity: 0.8;
   line-height: 1;
@@ -488,10 +491,32 @@
   height: 30px;
   border: 0;
   border-radius: 8px;
-  background: #bacee5;
+  background: #CADCF2;
   color: #32373d;
   font-size: 10px;
   font-weight: 800;
   padding: 0 8px;
   outline: none;
+}
+
+.record-live-btn img {
+  transition: 0.2s ease;
+  opacity: 0.75;
+  width: 30px;
+  height: 30px;
+}
+
+.record-live-btn.active {
+  background: rgba(210, 0, 0, 0.18);
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.45);
+}
+
+.record-live-btn.active img {
+  opacity: 1;
+  filter: brightness(0) saturate(10%) invert(20%) sepia(48%) saturate(3468%) hue-rotate(356deg) brightness(62%) contrast(100%);
+}
+
+.record-live-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
 }

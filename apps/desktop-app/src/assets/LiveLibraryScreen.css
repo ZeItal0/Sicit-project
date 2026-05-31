@@ -36,7 +36,7 @@
   max-width: 1120px;
   height: 52px;
 
-  background: #CADCF2;
+  background: #A5B9D4;
   border-radius: 9px;
 
   display: flex;
@@ -73,7 +73,7 @@
 .live-library-table-header {
   height: 38px;
 
-  background: #CADCF2;
+  background: #A5B9D4;
   border-radius: 8px;
 
   display: grid;
@@ -99,7 +99,7 @@
 .live-library-row {
   min-height: 88px;
 
-  background: #CADCF2;
+  background: #A5B9D4;
   border-radius: 9px;
 
   display: grid;

@@ -39,7 +39,7 @@
 .transmission-card {
     width: 260px;
     height: 185px;
-    background: #576f8d;
+    background: #A5B9D4;
     border-radius: 10px;
     padding: 8px;
     overflow: hidden;
@@ -80,7 +80,7 @@
 
 .transmission-info h2 {
     margin: 0;
-    color: #c7d4e1;
+    color: #32373d;
     font-size: 12px;
     font-weight: 800;
 
@@ -92,7 +92,7 @@
     align-items: center;
     gap: 6px;
 
-    color: #c7d4e1;
+    color: #32373d;
     font-size: 10px;
     font-weight: 700;
 }
@@ -100,6 +100,16 @@
 .transmission-user img {
     width: 14px;
     height: 14px;
+
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(19%)
+        sepia(6%)
+        saturate(601%)
+        hue-rotate(176deg)
+        brightness(94%)
+        contrast(88%);
 }
 
 .eye-icon {

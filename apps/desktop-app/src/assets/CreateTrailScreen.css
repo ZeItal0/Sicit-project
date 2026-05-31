@@ -48,7 +48,7 @@
     width: 530px;
 
 
-    background: #6f86a3;
+    background: #A5B9D4;
     border-radius: 8px;
 
     padding: 18px 26px;
@@ -177,7 +177,7 @@
 
 .trail-preview-card {
     width: 590px;
-    background: #6f86a3;
+    background: #A5B9D4;
     border-radius: 8px;
     padding: 18px 22px;
     box-sizing: border-box;
@@ -189,6 +189,7 @@
     margin: 0 0 14px;
     font-size: 16px;
     font-weight: 900;
+    color: #32373D;
 }
 
 .trail-preview-header {
@@ -330,7 +331,7 @@
     border: 0;
     border-radius: 8px;
 
-    background: #6f86a3;
+    background: #A5B9D4;
     color: #32373d;
 
     font-size: 10px;
@@ -355,7 +356,7 @@
 .trail-steps-card,
 .trail-requirements-card,
 .trail-public-card {
-    background: #6f86a3;
+    background: #A5B9D4;
     border-radius: 8px;
     color: #32373d;
     text-align: left;

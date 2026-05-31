@@ -1,57 +1,80 @@
 .user-info {
-    position: absolute;
-
-    top: 18px;
-    right: 120px;
-
-    z-index: 50;
+  position: absolute;
+  top: 20px;
+  right: 125px;
+  z-index: 50;
 }
 
 .user-avatar {
-    width: 48px;
-    height: 48px;
+  width: 42px;
+  height: 42px;
 
-    border: none;
-    border-radius: 50%;
+  border: 0;
+  border-radius: 50%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: rgba(199, 212, 225, 0.75);
 
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    transition: 0.25s ease;
+  cursor: pointer;
+
+  transition: 0.25s ease;
 }
 
 .user-avatar img {
-    width: 38px;
-    height: 38px;
-    object-fit: contain;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
 }
 
-.user-avatar:hover {
-    transform: scale(1.05);
+.user-avatar:hover,
+.user-avatar.active {
+  background: #32373d;
+}
+
+.user-avatar:hover img,
+.user-avatar.active img {
+  filter: brightness(0) invert(1);
 }
 
 .user-modal {
   position: absolute;
-  top: 58px;
+  top: 60px;
   right: 0;
 
-  width: 230px;
+  width: 250px;
+
   padding: 14px;
 
-  border-radius: 18px;
-  background: rgba(220, 235, 250, 0.92);
+  border-radius: 16px;
+
+  background: rgba(199, 212, 225, 0.94);
   backdrop-filter: blur(12px);
 
-  box-shadow: 0 14px 35px rgba(35, 48, 60, 0.18);
+  box-shadow: 0 16px 35px rgba(35, 48, 60, 0.22);
 
   display: flex;
   flex-direction: column;
   gap: 8px;
 
-  animation: userModalIn 0.25s ease forwards;
+  animation: userModalIn 0.22s ease forwards;
+}
+
+.user-modal::before {
+  content: "";
+
+  position: absolute;
+  top: -7px;
+  right: 17px;
+
+  width: 14px;
+  height: 14px;
+
+  background: rgba(199, 212, 225, 0.94);
+
+  transform: rotate(45deg);
 }
 
 .user-modal-header {
@@ -60,50 +83,84 @@
   gap: 12px;
 
   padding-bottom: 10px;
-  margin-bottom: 4px;
+
+  border-bottom: 1px solid rgba(50, 55, 61, 0.2);
 }
 
-.user-modal-header img {
-  width: 38px;
-  height: 38px;
+.user-modal-avatar {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  background: #7491B9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
 }
 
-.user-modal-header div {
+.user-modal-avatar img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.user-modal-header div:last-child {
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
 }
 
 .user-modal-header strong {
+  color: #32373d;
+
   font-size: 14px;
-  color: #26313a;
+  font-weight: 900;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .user-modal-header span {
-  font-size: 12px;
-  color: rgba(38, 49, 58, 0.7);
+  color: rgba(50, 55, 61, 0.72);
+
+  font-size: 11px;
+  font-weight: 800;
 }
 
-.user-modal-btn {
-  border: none;
-  background: transparent;
+.user-status {
+  height: 28px;
 
-  padding: 10px 12px;
-  border-radius: 12px;
+  border-radius: 999px;
 
-  text-align: left;
-  color: #26313a;
-  font-weight: 600;
+  background: rgba(111, 134, 163, 0.22);
 
-  cursor: pointer;
-  transition: 0.2s ease;
+  color: #32373d;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 0 11px;
+
+  font-size: 11px;
+  font-weight: 900;
 }
 
-.user-modal-btn:hover {
-  background: rgba(50, 55, 61, 0.12);
-}
+.user-status span {
+  width: 8px;
+  height: 8px;
 
-.user-modal-btn.danger {
-  color: #9b2c2c;
+  border-radius: 50%;
+
+  background: #00e436;
+
+  box-shadow: 0 0 8px rgba(0, 228, 54, 0.8);
 }
 
 @keyframes userModalIn {

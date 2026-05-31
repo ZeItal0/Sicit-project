@@ -10,7 +10,7 @@
     border: 0;
     border-radius: 60px;
 
-    background: #6f86a3;
+    background: #A5B9D4;
     color: #c7d4e1;
 
     font-size: 22px;
@@ -28,7 +28,7 @@
     width: 275px;
     height: 490px;
 
-    background: #6f86a3;
+    background: #A5B9D4;
     border-radius: 8px;
 
     padding: 16px;
@@ -46,7 +46,7 @@
     width: 24px;
     height: 24px;
 
-    background: #6f86a3;
+    background: #A5B9D4;
     transform: rotate(45deg);
 }
 
@@ -60,12 +60,13 @@
     margin: 0;
     font-size: 14px;
     font-weight: 900;
+    color: #32373d;
 }
 
 .floating-chat-list-header button {
     border: 0;
     background: transparent;
-    color: #c7d4e1;
+    color: #32373d;
     font-size: 24px;
     cursor: pointer;
 }
@@ -88,13 +89,13 @@
     outline: 0;
     background: transparent;
 
-    color: #c7d4e1;
+    color: #32373d;
     font-size: 11px;
     font-weight: 800;
 }
 
 .floating-chat-search input::placeholder {
-    color: #c7d4e1;
+    color: #32373d;
 }
 
 .floating-chat-search img {
@@ -128,7 +129,7 @@
 
     border: 0;
     background: transparent;
-    color: #c7d4e1;
+    color: #32373d;
 
     cursor: pointer;
     text-align: left;
@@ -141,6 +142,15 @@
 .floating-chat-avatar img {
     width: 34px;
     height: 34px;
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(19%)
+        sepia(6%)
+        saturate(601%)
+        hue-rotate(176deg)
+        brightness(94%)
+        contrast(88%);
 }
 
 .floating-chat-avatar span {
@@ -205,7 +215,7 @@
     width: 300px;
     height: 340px;
 
-    background: #6f86a3;
+    background: #A5B9D4;
     border-radius: 8px;
 
     overflow: hidden;
@@ -216,7 +226,7 @@
 .floating-chat-window-header {
     height: 44px;
     line-height: 1;
-    background: #576f8d;
+    background: #92AACA;
     color: #c7d4e1;
 
     display: flex;
@@ -236,25 +246,37 @@
 .floating-chat-window-header img {
     width: 30px;
     height: 30px;
+
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(19%)
+        sepia(6%)
+        saturate(601%)
+        hue-rotate(176deg)
+        brightness(94%)
+        contrast(88%);
 }
 
 .floating-chat-window-header strong {
     font-size: 12px;
     font-weight: 900;
+    color: #32373d;
 }
 
 .floating-chat-window-header p {
     margin: 1px 0 0;
     font-size: 8px;
     font-weight: 800;
+    color: #32373d;
 }
 
 .floating-chat-window-header button {
     border: 0;
     background: transparent;
-    color: #c7d4e1;
     font-size: 22px;
     cursor: pointer;
+    color: #32373d;
 }
 
 .floating-chat-messages {
@@ -290,6 +312,15 @@
 .floating-message img {
     width: 24px;
     height: 24px;
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(19%)
+        sepia(6%)
+        saturate(601%)
+        hue-rotate(176deg)
+        brightness(94%)
+        contrast(88%);
 }
 
 .floating-message div {
@@ -306,8 +337,8 @@
 }
 
 .floating-message.mine div {
-    background: #576f8d;
-    color: #c7d4e1;
+    background: #92AACA;
+    color: #32373d;
 }
 
 .floating-message p {
@@ -331,7 +362,7 @@
 .floating-chat-input {
     height: 42px;
 
-    background: #576f8d;
+    background: #92AACA;
     border-top: 1px solid rgba(199, 212, 225, 0.4);
 
     display: flex;
@@ -348,13 +379,13 @@
     outline: 0;
     background: transparent;
 
-    color: #c7d4e1;
+    color: #32373d;
     font-size: 10px;
     font-weight: 800;
 }
 
 .floating-chat-input input::placeholder {
-    color: #c7d4e1;
+    color: #32373d;
 }
 
 .floating-chat-input button {

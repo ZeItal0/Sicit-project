@@ -16,7 +16,7 @@
 }
 
 .sectors-header p {
-    margin: 8px 0 18px;
+   margin: 4px 0 10px;
     color: #32373d;
     font-size: 11px;
     font-weight: 800;
@@ -33,7 +33,7 @@
 .sectors-list-panel,
 .sector-details-panel,
 .sector-users-panel {
-    background: #6f86a3;
+    background: #A5B9D4;
     border-radius: 8px;
     padding: 18px 14px;
     color: #32373d;
@@ -222,7 +222,7 @@
     flex: 1;
     height: 54px;
 
-    background: rgba(87, 111, 141, 0.5);
+    background: #CADCF2;
     border-radius: 6px;
 
     display: flex;

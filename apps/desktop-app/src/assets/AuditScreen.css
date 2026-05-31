@@ -289,6 +289,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: #32373d;
 }
 
 .audit-date-picker {
@@ -327,4 +328,158 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.audit-detail-button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.audit-detail-button:hover {
+  text-decoration: underline;
+}
+
+.audit-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.audit-modal {
+  width: min(860px, 96vw);
+  max-height: 88vh;
+  overflow-y: auto;
+  border-radius: 22px;
+  background: #7491B9;
+  border: 1px solid rgba(50, 55, 61, 0.15);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  padding: 24px;
+}
+
+.audit-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.audit-modal-header h2 {
+  margin: 0;
+  color: #32373d;
+  font-size: 22px;
+}
+
+.audit-modal-header p {
+  margin: 6px 0 0;
+  color: rgba(50, 55, 61, 0.65);
+  font-size: 13px;
+}
+
+.audit-modal-header button {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 12px;
+  color: #32373d;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audit-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.audit-modal-info {
+  background: #A5B9D4;
+  border: 1px solid rgba(50, 55, 61, 0.1);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.audit-modal-info span {
+  display: block;
+  font-size: 11px;
+  color: rgba(50, 55, 61, 0.58);
+  margin-bottom: 5px;
+}
+
+.audit-modal-info strong {
+  display: block;
+  font-size: 13px;
+  color: #32373d;
+  word-break: break-word;
+}
+
+.audit-modal-section {
+  margin-top: 16px;
+}
+
+.audit-modal-section h3 {
+  margin: 0 0 8px;
+  color: #32373d;
+  font-size: 15px;
+}
+
+.audit-modal-section pre {
+  margin: 0;
+  padding: 14px;
+  border-radius: 14px;
+  background: #111827;
+  color: #d7e8ff;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+
+  border-radius: 999px;
+
+  border: 2px solid transparent;
+
+  background-clip: padding-box;
+
+  backdrop-filter: blur(12px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+
+  border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
 }
