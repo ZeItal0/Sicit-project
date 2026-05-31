@@ -1,0 +1,96 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Tenant {
+  id          String             @id @default(uuid())
+  companyName String             @map("company_name")
+  domain      String             @unique
+  status      String             @default("ACTIVE")
+  createdAt   DateTime           @default(now()) @map("created_at")
+
+  admins      TenantAdmin[]
+  ldapConfigs TenantLdapConfig[]
+  googleUsers GoogleUser[]
+  hrIntegrationConfigs TenantHrIntegrationConfig[]
+
+  @@map("tenants")
+}
+
+model TenantAdmin {
+  id           String   @id @default(uuid())
+  tenantId     String   @map("tenant_id")
+  name         String
+  email        String
+  passwordHash String   @map("password_hash")
+  role         String   @default("TENANT_ADMIN")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, email])
+  @@map("tenant_admins")
+}
+
+model TenantLdapConfig {
+  id            String   @id @default(uuid())
+  tenantId      String   @map("tenant_id")
+  ldapUrl       String   @map("ldap_url")
+  baseDn        String   @map("base_dn")
+  bindDn        String   @map("bind_dn")
+  bindPassword  String   @map("bind_password")
+  userAttribute String   @default("uid") @map("user_attribute")
+  isActive      Boolean  @default(true) @map("is_active")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@map("tenant_ldap_configs")
+}
+
+model GoogleUser {
+  id           String   @id @default(uuid())
+  googleId     String   @unique @map("google_id")
+  name         String?
+  email        String   @unique
+  picture      String?
+  role         String   @default("GOOGLE_USER")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+  
+  tenantId String? @map("tenant_id")
+  tenant   Tenant? @relation(fields: [tenantId], references: [id])
+
+  @@map("google_users")
+}
+
+model TenantHrIntegrationConfig {
+  id                String   @id @default(uuid())
+  tenantId          String   @map("tenant_id")
+
+  provider          String   @default("CUSTOM_API")
+  apiUrl            String   @map("api_url")
+  apiToken          String   @map("api_token")
+
+  employeesEndpoint String   @map("employees_endpoint")
+  sectorsEndpoint   String   @map("sectors_endpoint")
+  rolesEndpoint     String   @map("roles_endpoint")
+
+  syncEmployees     Boolean  @default(true) @map("sync_employees")
+  syncRoles         Boolean  @default(true) @map("sync_roles")
+  syncSectors       Boolean  @default(true) @map("sync_sectors")
+
+  frequency         String   @default("Diaria")
+  isActive          Boolean  @default(true) @map("is_active")
+
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@map("tenant_hr_integration_configs")
+}
